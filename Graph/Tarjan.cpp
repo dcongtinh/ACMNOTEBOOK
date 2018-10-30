@@ -3,11 +3,11 @@
 #define fdto(i, x, y) for (int i = (x); i >= (y); --i)
 #define forit(it, var) for (__typeof(var.begin()) it = var.begin(); it != var.end(); ++it)
 #define forrit(it, var) for (__typeof(var.rbegin()) rit = var.rbegin(); rit != var.rend(); ++rit)
-#define DEBUG(x)         \
-  {                      \
-    cout << #x << " = "; \
-    cout << (x) << endl; \
-  }
+#define DEBUG(x)             \
+    {                        \
+        cout << #x << " = "; \
+        cout << (x) << endl; \
+    }
 #define pb push_back
 #define mp make_pair
 #define ii pair<int, int>
@@ -29,50 +29,50 @@ bool vis[maxN];
 
 void visit(int u)
 {
-  num[u] = low[u] = ++dfsCount;
-  int m = (int)ke[u].size();
-  q.push(u);
-  fto(i, 0, m - 1)
-  {
-    int v = ke[u][i];
-    if (!vis[v])
+    num[u] = low[u] = ++dfsCount;
+    int m = (int)ke[u].size();
+    q.push(u);
+    fto(i, 0, m - 1)
     {
-      if (num[v] == 0)
-      {
-        visit(v);
-        low[u] = min(low[u], low[v]);
-      }
-      else
-        low[u] = min(low[u], num[v]);
+        int v = ke[u][i];
+        if (!vis[v])
+        {
+            if (num[v] == 0)
+            {
+                visit(v);
+                low[u] = min(low[u], low[v]);
+            }
+            else
+                low[u] = min(low[u], num[v]);
+        }
     }
-  }
-  if (num[u] == low[u])
-  {
-    ++ans;
-    int v;
-    do
+    if (num[u] == low[u])
     {
-      v = q.top();
-      q.pop();
-      vis[v] = true;
-    } while (v != u);
-  }
+        ++ans;
+        int v;
+        do
+        {
+            v = q.top();
+            q.pop();
+            vis[v] = true;
+        } while (v != u);
+    }
 }
 
 int main()
 {
-  scanf("%d%d", &n, &m);
-  fto(i, 0, m - 1)
-  {
-    int u, v;
-    scanf("%d%d", &u, &v);
-    ke[u].pb(v);
-  }
-  fto(u, 1, n)
-  {
-    if (num[u] == 0)
-      visit(u);
-  }
-  cout << ans;
-  return 0;
+    scanf("%d%d", &n, &m);
+    fto(i, 0, m - 1)
+    {
+        int u, v;
+        scanf("%d%d", &u, &v);
+        ke[u].pb(v);
+    }
+    fto(u, 1, n)
+    {
+        if (num[u] == 0)
+            visit(u);
+    }
+    cout << ans;
+    return 0;
 }
