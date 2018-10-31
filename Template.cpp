@@ -17,6 +17,8 @@
 #define se second
 #define all(x) x.begin(), x.end()
 #define ll long long
+#define db double
+#define EPS 1e-9
 #define oo 1000000007
 #define maxN 100005
 
