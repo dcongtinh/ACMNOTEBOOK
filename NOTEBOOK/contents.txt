@@ -1,0 +1,23 @@
+# Any line followed by a '#' character is ignored
+# Section headings must be in square brackets
+# Subsections within a section should follow the format:
+#   [filename within code directory][tab character \t][subsection title]
+
+[Back Tracking]
+Combination.cpp Combination
+Generation.cpp Generate binary string
+Permutation.cpp Permutation
+
+[Data Structures]
+BIT_MinMax.cpp BIT find Min Max in Segment
+BIT_Sum.cpp BIT calculate Sum in Segment
+IT_1type.cpp IT with one query's type
+IT_2types.cpp IT with 2 queries' type
+
+[Dynamite Programming]
+LIS.cpp Longest Increasing Subsequence
+
+[Geometry]
+ConvexHull_Ver1.cpp Convex Hull
+HISTOGRA.cpp HISTOGRAM
+

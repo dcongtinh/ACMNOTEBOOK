@@ -1,9 +1,3 @@
-#include <bits/stdc++.h>
-
-using namespace std;
-
-int a[15], n;
-
 void generate(int i)
 {
     if (i > n)
@@ -18,11 +12,4 @@ void generate(int i)
         a[i] = j;
         generate(i + 1);
     }
-}
-
-int main()
-{
-    cin >> n;
-    generate(1);
-    return 0;
 }
